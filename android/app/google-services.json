@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "444669370263",
+    "project_id": "daily-medicine-682d5",
+    "storage_bucket": "daily-medicine-682d5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444669370263:android:8a3cebc8890d65a03a2ed2",
+        "android_client_info": {
+          "package_name": "com.example.dailymedicine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiCKCn6boTflTI7sA8qkARD7aVGyEznMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
