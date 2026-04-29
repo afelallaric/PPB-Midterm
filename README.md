@@ -1,50 +1,18 @@
 # DailyMedicine
 
+Link video demo aplikasi: https://youtu.be/EFxrdEQ6uas
+
 Aplikasi pengingat minum obat dengan fitur:
 
 - Login/Register (Firebase Authentication)
 - Jadwal obat per user dengan jam yang diatur user
 - Notifikasi pengingat bila belum ada bukti minum obat
 - Kamera untuk mengambil foto bukti minum obat
-- Upload bukti ke Firebase Storage
+- Foto disimpan pada lokal
 - Data Firestore dengan referensi berbasis ID dokumen
 
-## Struktur Data Firestore (Reference by ID)
 
-Koleksi disusun per user:
-
-- `users/{uid}/medications/{medicationId}`
-- `users/{uid}/medications/{medicationId}/proofs/{yyyymmdd}`
-
-Contoh data obat (`medicationId` diset manual dari timestamp):
-
-```json
-{
-	"id": "1714388800000",
-	"name": "Paracetamol",
-	"dose": "1 tablet sesudah makan",
-	"hour": 20,
-	"minute": 30,
-	"sortKey": 1230,
-	"active": true,
-	"createdAt": "serverTimestamp",
-	"updatedAt": "serverTimestamp"
-}
-```
-
-Contoh data bukti (`proofs/{yyyymmdd}`):
-
-```json
-{
-	"id": "20260429",
-	"medicationId": "1714388800000",
-	"imageUrl": "https://...",
-	"takenAt": "timestamp",
-	"createdAt": "serverTimestamp"
-}
-```
-
-## Setup Firebase
+## Setup
 
 1. Buat project Firebase.
 2. Aktifkan Authentication metode Email/Password.
@@ -63,11 +31,6 @@ flutter pub add cloud_firestore
 flutter pub add firebase_auth
 ```
 
-6. Tambahkan file konfigurasi platform:
-
-- Android: `android/app/google-services.json`
-- iOS: `ios/Runner/GoogleService-Info.plist`
-
 ## Menjalankan Aplikasi
 
 ```bash
@@ -76,7 +39,3 @@ flutter pub get
 flutter run
 ```
 
-## Catatan Platform
-
-- Android permission kamera dan notifikasi sudah ditambahkan di `AndroidManifest.xml`.
-- iOS camera usage description sudah ditambahkan di `Info.plist`.
